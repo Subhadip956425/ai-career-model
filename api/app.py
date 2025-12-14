@@ -21,9 +21,9 @@ models_path = os.path.join(parent_dir, 'models')
 try:
     recommendation_engine = RecommendationEngine(model_path=models_path + '/')
     roadmap_generator = RoadmapGenerator()
-    print("✓ Models loaded successfully")
+    print("Models loaded successfully")
 except Exception as e:
-    print(f"✗ Error loading models: {e}")
+    print(f"Error loading models: {e}")
     print("Please train the models first by running: python train_complete_system.py")
 
 
@@ -236,36 +236,56 @@ def predict_salary():
 
 @app.route('/api/roadmap-visualization', methods=['POST'])
 def get_roadmap_visualization():
-    """
-    Generate roadmap visualization data
-    
-    Expected JSON:
-    {
-        "career_name": "Data Scientist",
-        "current_skills": ["Python", "Statistics"]
-    }
-    """
+    """Generate roadmap visualization data with career name normalization"""
     try:
         data = request.get_json()
-        career_name = data.get('career_name')
+        career_name = data.get('career_name', '').strip()
         current_skills = data.get('current_skills', [])
         
-        if career_name not in recommendation_engine.career_database:
-            return jsonify({'success': False, 'error': 'Career not found'}), 404
+        print(f"Received: career='{career_name}', skills={current_skills}")
         
-        required_skills = recommendation_engine.career_database[career_name].get('required_skills', [])
+        # INLINE CAREER NAME NORMALIZATION
+        career_mapping = {
+            'web developer': 'Software Engineer',
+            'web development': 'Software Engineer',
+            'frontend developer': 'Software Engineer',
+            'backend developer': 'Software Engineer',
+            'full stack developer': 'Software Engineer',
+            'data analyst': 'Data Scientist',
+            'ml engineer': 'Data Scientist',
+            'finance': 'Financial Analyst',
+            'analyst': 'Financial Analyst',
+        }
+        
+        normalized_career = career_mapping.get(career_name.lower(), career_name)
+        print(f"Normalized: '{career_name}' -> '{normalized_career}'")
+        
+        # Check if career exists
+        if normalized_career not in recommendation_engine.career_database:
+            available = list(recommendation_engine.career_database.keys())
+            print(f"Career not found. Available: {available}")
+            return jsonify({
+                'success': False,
+                'error': f'Career "{career_name}" not found',
+                'tried': normalized_career,
+                'available_careers': available
+            }), 404
+        
+        required_skills = recommendation_engine.career_database[normalized_career].get('required_skills', [])
         skill_gap = recommendation_engine.analyze_skill_gap(current_skills, required_skills)
+        roadmap_graph = roadmap_generator.generate_roadmap_graph(normalized_career, skill_gap)
         
-        roadmap_graph = roadmap_generator.generate_roadmap_graph(career_name, skill_gap)
-        
-        return jsonify({
-            'success': True,
-            'data': roadmap_graph
-        }), 200
+        return jsonify({'success': True, 'data': roadmap_graph}), 200
         
     except Exception as e:
-        return jsonify({'success': False, 'error': str(e)}), 500
-
+        import traceback
+        print(f"Error: {e}")
+        traceback.print_exc()
+        return jsonify({
+            'success': False,
+            'error': str(e),
+            'traceback': traceback.format_exc()
+        }), 500
 
 if __name__ == '__main__':
     print("\n" + "="*60)

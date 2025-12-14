@@ -169,6 +169,178 @@ class RecommendationEngine:
                 ],
                 'avg_salary': {'fresher': [6, 12], '3-5_years': [15, 35], '5+_years': [35, 80]}
             },
+
+            'Product Manager': {
+            'description': 'Lead product development and strategy',
+            'required_skills': ['Product Strategy', 'User Research', 'Agile', 'Communication', 'Market Analysis'],
+            'colleges': ['IIM Bangalore - MBA', 'ISB Hyderabad - MBA', 'MDI Gurgaon - MBA'],
+            'courses': ['Product Management', 'Agile Methodology', 'UX Design'],
+            'job_profiles': [
+                {'title': 'Associate PM', 'salary_range': [10, 18], 'experience': 0},
+                {'title': 'Product Manager', 'salary_range': [18, 35], 'experience': 3},
+                {'title': 'Senior PM', 'salary_range': [35, 60], 'experience': 5}
+            ],
+            'roadmap': {
+                'Year 1': 'Learn product management fundamentals, user research',
+                'Year 2': 'Work on real products, learn analytics',
+                'Year 3': 'Lead product launches, mentor juniors'
+            },
+            'certifications': ['Certified Scrum Product Owner', 'Pragmatic Marketing'],
+            'avg_salary': {'fresher': [12, 20], '3-5_years': [25, 45], '5+_years': [45, 80]}
+        },
+        
+        'Digital Marketing Manager': {
+            'description': 'Plan and execute digital marketing campaigns',
+            'required_skills': ['SEO', 'Social Media Marketing', 'Google Ads', 'Analytics', 'Content Marketing'],
+            'colleges': ['MICA Ahmedabad', 'IIMS Pune', 'IMT Ghaziabad'],
+            'courses': ['Digital Marketing', 'SEO/SEM', 'Social Media Strategy'],
+            'job_profiles': [
+                {'title': 'Digital Marketing Executive', 'salary_range': [3, 6], 'experience': 0},
+                {'title': 'Digital Marketing Manager', 'salary_range': [8, 15], 'experience': 3},
+                {'title': 'Head of Digital', 'salary_range': [20, 40], 'experience': 7}
+            ],
+            'roadmap': {
+                'Year 1': 'Learn SEO, social media, Google Ads basics',
+                'Year 2': 'Run campaigns, build portfolio',
+                'Year 3': 'Specialize in growth hacking or brand strategy'
+            },
+            'certifications': ['Google Ads Certification', 'HubSpot Content Marketing'],
+            'avg_salary': {'fresher': [4, 8], '3-5_years': [10, 20], '5+_years': [20, 45]}
+        },
+        
+        'Mechanical Engineer': {
+            'description': 'Design and develop mechanical systems',
+            'required_skills': ['CAD', 'Thermodynamics', 'Mechanics', 'Manufacturing', 'Materials Science'],
+            'colleges': ['IIT Madras', 'IIT Delhi', 'NIT Trichy', 'BITS Pilani'],
+            'courses': ['Machine Design', 'Thermodynamics', 'CAD/CAM'],
+            'job_profiles': [
+                {'title': 'Design Engineer', 'salary_range': [4, 8], 'experience': 0},
+                {'title': 'Senior Engineer', 'salary_range': [8, 15], 'experience': 3},
+                {'title': 'Engineering Manager', 'salary_range': [15, 30], 'experience': 7}
+            ],
+            'roadmap': {
+                'Year 1': 'B.Tech Mechanical, learn CAD software',
+                'Year 2-3': 'Internships, projects in automotive/manufacturing',
+                'Year 4': 'Campus placements or higher studies (M.Tech)'
+            },
+            'certifications': ['AutoCAD Certified Professional', 'SolidWorks Certification'],
+            'avg_salary': {'fresher': [5, 10], '3-5_years': [10, 20], '5+_years': [20, 40]}
+        },
+        
+        'Civil Engineer': {
+            'description': 'Design and oversee construction projects',
+            'required_skills': ['Structural Design', 'AutoCAD', 'Project Management', 'Surveying'],
+            'colleges': ['IIT Bombay', 'IIT Kharagpur', 'NIT Surathkal'],
+            'courses': ['Structural Analysis', 'Construction Management', 'Geotechnical Engineering'],
+            'job_profiles': [
+                {'title': 'Site Engineer', 'salary_range': [3, 6], 'experience': 0},
+                {'title': 'Structural Engineer', 'salary_range': [6, 12], 'experience': 3},
+                {'title': 'Project Manager', 'salary_range': [15, 30], 'experience': 7}
+            ],
+            'roadmap': {
+                'Year 1': 'B.Tech Civil, AutoCAD training',
+                'Year 2-3': 'Site visits, internships',
+                'Year 4': 'Prepare for GATE or campus placements'
+            },
+            'certifications': ['PMP', 'AutoCAD Civil 3D'],
+            'avg_salary': {'fresher': [4, 8], '3-5_years': [8, 18], '5+_years': [18, 35]}
+        },
+        
+        'Graphic Designer': {
+            'description': 'Create visual content for brands and media',
+            'required_skills': ['Adobe Photoshop', 'Illustrator', 'UI/UX Design', 'Typography', 'Branding'],
+            'colleges': ['NID Ahmedabad', 'Pearl Academy', 'Srishti School of Design'],
+            'courses': ['Graphic Design', 'UI/UX Design', 'Branding'],
+            'job_profiles': [
+                {'title': 'Junior Designer', 'salary_range': [3, 5], 'experience': 0},
+                {'title': 'Graphic Designer', 'salary_range': [5, 10], 'experience': 2},
+                {'title': 'Creative Director', 'salary_range': [15, 35], 'experience': 7}
+            ],
+            'roadmap': {
+                'Year 1': 'Learn Adobe Creative Suite, build portfolio',
+                'Year 2': 'Freelance projects, internships',
+                'Year 3': 'Specialize in branding or UI/UX'
+            },
+            'certifications': ['Adobe Certified Professional', 'Google UX Design'],
+            'avg_salary': {'fresher': [3, 6], '3-5_years': [8, 15], '5+_years': [15, 30]}
+        },
+        
+        'Doctor': {
+            'description': 'Diagnose and treat patients',
+            'required_skills': ['Medical Knowledge', 'Patient Care', 'Diagnosis', 'Surgery'],
+            'colleges': ['AIIMS Delhi', 'CMC Vellore', 'JIPMER Puducherry'],
+            'courses': ['MBBS', 'MD/MS Specialization'],
+            'job_profiles': [
+                {'title': 'Junior Resident', 'salary_range': [8, 12], 'experience': 0},
+                {'title': 'Medical Officer', 'salary_range': [12, 20], 'experience': 3},
+                {'title': 'Consultant', 'salary_range': [30, 100], 'experience': 10}
+            ],
+            'roadmap': {
+                'Year 1-5': 'MBBS degree',
+                'Year 6-8': 'MD/MS specialization',
+                'Year 9+': 'Practice and super-specialization'
+            },
+            'certifications': ['Medical Council Registration', 'Board Certification'],
+            'avg_salary': {'fresher': [10, 15], '3-5_years': [20, 40], '5+_years': [50, 150]}
+        },
+        
+        'Lawyer': {
+            'description': 'Provide legal counsel and representation',
+            'required_skills': ['Legal Research', 'Contract Law', 'Litigation', 'Communication'],
+            'colleges': ['NLSIU Bangalore', 'NALSAR Hyderabad', 'NLU Delhi'],
+            'courses': ['LLB', 'LLM', 'Corporate Law'],
+            'job_profiles': [
+                {'title': 'Junior Associate', 'salary_range': [5, 10], 'experience': 0},
+                {'title': 'Senior Associate', 'salary_range': [10, 25], 'experience': 4},
+                {'title': 'Partner', 'salary_range': [40, 150], 'experience': 10}
+            ],
+            'roadmap': {
+                'Year 1-3/5': 'LLB degree',
+                'Year 3-5': 'Internships at law firms',
+                'Year 5+': 'Bar exam and practice'
+            },
+            'certifications': ['Bar Council Enrollment', 'LLM'],
+            'avg_salary': {'fresher': [6, 12], '3-5_years': [15, 35], '5+_years': [40, 120]}
+        },
+        
+        'Teacher': {
+            'description': 'Educate and mentor students',
+            'required_skills': ['Subject Knowledge', 'Communication', 'Classroom Management', 'Curriculum Design'],
+            'colleges': ['Delhi University', 'NCERT', 'Jamia Millia Islamia'],
+            'courses': ['B.Ed', 'M.Ed', 'Subject-specific training'],
+            'job_profiles': [
+                {'title': 'Primary Teacher', 'salary_range': [3, 6], 'experience': 0},
+                {'title': 'Secondary Teacher', 'salary_range': [5, 10], 'experience': 3},
+                {'title': 'Principal', 'salary_range': [15, 30], 'experience': 10}
+            ],
+            'roadmap': {
+                'Year 1-3': 'Graduation in subject',
+                'Year 4-5': 'B.Ed degree',
+                'Year 5+': 'Teaching practice and CTET'
+            },
+            'certifications': ['CTET', 'TET', 'B.Ed'],
+            'avg_salary': {'fresher': [3, 6], '3-5_years': [6, 12], '5+_years': [12, 25]}
+        },
+        
+        'Business Analyst': {
+            'description': 'Analyze business processes and recommend improvements',
+            'required_skills': ['Data Analysis', 'SQL', 'Business Intelligence', 'Stakeholder Management'],
+            'colleges': ['IIM Ahmedabad', 'ISB Hyderabad', 'SP Jain Mumbai'],
+            'courses': ['Business Analysis', 'Data Analytics', 'MBA'],
+            'job_profiles': [
+                {'title': 'Junior BA', 'salary_range': [5, 10], 'experience': 0},
+                {'title': 'Business Analyst', 'salary_range': [10, 20], 'experience': 3},
+                {'title': 'Senior BA', 'salary_range': [20, 40], 'experience': 7}
+            ],
+            'roadmap': {
+                'Year 1': 'Learn SQL, Excel, Tableau',
+                'Year 2': 'Work on projects, get internships',
+                'Year 3+': 'Specialize in domain or get MBA'
+            },
+            'certifications': ['CBAP', 'PMI-PBA', 'Tableau Certification'],
+            'avg_salary': {'fresher': [6, 12], '3-5_years': [12, 25], '5+_years': [25, 50]}
+        }
+        
         }
     
     def _build_learning_resources(self):
@@ -383,8 +555,8 @@ class RecommendationEngine:
             for career, prob in zip(top_3_careers, top_3_probs):
                 if career in self.career_database:
                     career_info = self.career_database[career].copy()
-                    career_info['career_name'] = career
-                    career_info['match_score'] = round(prob * 100, 2)
+                    career_info['career_name'] = str(career)
+                    career_info['match_score'] = float(round(prob * 100, 2))
                     
                     if current_skills and len(current_skills) > 0:
                         required_skills = career_info.get('required_skills', [])
@@ -407,7 +579,7 @@ class RecommendationEngine:
                 'top_recommendation': recommendations[0] if recommendations else None,
                 'alternative_careers': recommendations[1:] if len(recommendations) > 1 else [],
                 'all_predictions': [
-                    {'career': c, 'confidence': round(p * 100, 2)} 
+                    {'career': str(c), 'confidence': float(round(p * 100, 2))} 
                     for c, p in zip(top_3_careers, top_3_probs)
                 ]
             }
